@@ -12,6 +12,7 @@
     "coffee-script": "*",
     "less": "*",
     "underscore": "*",
-    "uglify-js": "*"
+    "uglify-js": "*",
+    "csso": "*"
   }
 }
