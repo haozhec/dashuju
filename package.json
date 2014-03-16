@@ -11,6 +11,7 @@
     "connect-assets": "*",
     "coffee-script": "*",
     "less": "*",
-    "underscore": "*"
+    "underscore": "*",
+    "uglify-js": "*"
   }
 }
