@@ -1,17 +1,114 @@
 @bodyBg: #fff;
-@bright: #68c390;
+@bright: #1D71B6;
 @dark: darken(@bright, 5%);
-@brightText: #ebdba7;
-@textColor: #333;
+@brightText: #fff;
+@darkText: #38485a;
+@textColor: #747f8c;
 @linkColor: @bright;
 @errorColor: #b94a48;
 
 @screen-sm: 768px;
 
 body {
+  font-size: 16px;
+  font-size: 1.6rem;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-family: "Open Sans",Arial,"Hiragino Sans GB","Microsoft YaHei","微软雅黑","STHeiti","WenQuanYi Micro Hei",SimSun,sans-serif;
   background-color: @bodyBg;
   font: normal 14px/1.5 "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, "STHeiti", SimSun, sans-serif;
   color: @textColor;
+}
+
+#header {
+  a {
+    height: 80px;
+  }
+
+  .navbar-brand {
+    background: @bright;
+    color: @brightText;
+    font-size: 30px;
+    line-height: 1.6em;
+  }
+
+  .nav>li {
+    >a {
+      border-top: transparent 5px solid;
+      text-decoration: none;
+      line-height: 30px;
+      font-size: 16px;
+
+      &:hover, &:focus {
+        border-top: @bright 5px solid;
+        background: none;
+      }
+    }
+  }  
+}
+
+#top-slider {
+  height: 680px;
+  background: url(/images/crossword.png);
+
+  .row.first {
+    margin-top: 160px;
+    margin-bottom: 40px;
+  }
+
+  h1 {
+    font-size: 48px;
+    color: @darkText;
+  }
+
+  h2 {
+    margin: 30px 0;
+    font-size: 24px;
+    line-height: 1.6em;
+  }
+
+  a.btn {
+    border: none;
+
+    &.btn-lg {
+      border-radius: 3px;
+    }
+
+    &.btn-default, &.btn-primary, &.btn-success, &.btn-info, &.btn-warning, &.btn-danger {
+      text-shadow: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      background-image: none;
+      filter: none;
+    }
+  }
+
+  .pic-left-text-right {
+    h1 {
+      margin-top: 80px;
+    }
+
+    h1, h2 {
+      text-align: right;
+    }
+  }
+
+  .carousel-indicators {
+    li {
+      border-color: @bright;
+      width: 15px;
+      height: 15px;
+      margin-left: 8px;
+      margin-right: 8px;
+
+      &.active {
+        background-color: @bright;
+      }
+    }
+  }
 }
 
 a {

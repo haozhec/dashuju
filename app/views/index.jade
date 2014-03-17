@@ -1,11 +1,25 @@
 extends layout
 
 block content
-  div.content
-    div.container
-      div.row
-        div.col-md-12.col-sm-6.col-xs-12
-          h1#title 德国大数据
-          h2 网站建设中...
-
+  #top-slider.content
+    .container
+      .row.first
+        .pic-left-text-right
+          .col-md-6.col-sm-6.col-xs-12
+            img(src="/images/big-data.png")
+          .col-md-6.col-sm-6.col-xs-12
+            h1 改变人类对世界的认知
+            h2 
+              | 全景数据，让每个人都在信息面前裸奔
+              br
+              | 全新的上帝视角，看世界变得更加清晰完整
+              br
+              | 拥抱大数据，做新世界的原住民
+            a(href="###").btn.btn-primary.btn-lg.pull-right 继续阅读
+      .row
+        .col-md-12.col-sm-12.col-xs-12
+          ol.carousel-indicators
+            li.active(data-target="#myCarousel", data-slide-to="0")
+            li(data-target="#myCarousel", data-slide-to="1")
+            li(data-target="#myCarousel", data-slide-to="2")
   != js("main")
