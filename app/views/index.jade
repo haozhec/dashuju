@@ -3,23 +3,111 @@ extends layout
 block content
   #top-slider.content
     .container
-      .row.first
-        .pic-left-text-right
-          .col-md-6.col-sm-6.col-xs-12
-            img(src="/images/big-data.png")
-          .col-md-6.col-sm-6.col-xs-12
-            h1 改变人类对世界的认知
-            h2 
-              | 全景数据，让每个人都在信息面前裸奔
-              br
-              | 全新的上帝视角，看世界变得更加清晰完整
-              br
-              | 拥抱大数据，做新世界的原住民
-            a(href="###").btn.btn-primary.btn-lg.pull-right 继续阅读
+      .row.first.slide-container
+        .carousel
+          figure
+            .col-md-6.col-sm-6.col-xs-12.left
+              img(src="/images/big-data.png")
+            .col-md-6.col-sm-6.col-xs-12.right
+              h1 改变人类对世界的认知
+              h2 
+                | 全景数据，让每个人都在信息世界里裸奔
+                br
+                | 上帝视角，看世界变得更加清晰完整
+                br
+                | 拥抱大数据，做新世界的原住民
+              a(href="###").btn.btn-primary.btn-lg.pull-right 继续阅读
+          figure
+            .col-md-6.col-sm-6.col-sm-push-6.col-xs-12.right
+              img(src="/images/cn-de.png")
+            .col-md-6.col-sm-6.col-sm-pull-6.col-xs-12.left
+              h1 世界是相通的
+              h2 
+                | 在世界的每个角落，大数据都是最热烈的话题
+                br
+                | 中国和德国的工程师，科学家都在争分多秒的努力着
+                br
+                | 连接地球两端最新的科技和应用场景
+              a(href="###").btn.btn-primary.btn-lg 继续阅读
+              
+          figure
+            .col-md-6.col-sm-6.col-xs-12.left
+              img(src="/images/house-of-cards.png")
+            .col-md-6.col-sm-6.col-xs-12.right
+              h1 大数据驱动影视制作
+              h2 
+                | Netflix比观众还要清楚自己的观影喜好
+                br
+                | 凑齐“红火三要素”
+                br
+                | 大数据成影视业宝藏
+              a(href="###").btn.btn-primary.btn-lg.pull-right 继续阅读
       .row
         .col-md-12.col-sm-12.col-xs-12
           ol.carousel-indicators
-            li.active(data-target="#myCarousel", data-slide-to="0")
-            li(data-target="#myCarousel", data-slide-to="1")
-            li(data-target="#myCarousel", data-slide-to="2")
+            - for (var i = 0; i < 3; i++) {
+              li
+            - }
+  #industry.content
+    .container
+      .row.first
+        .col-md-12.col-sm-12.col-xs-12
+          h1 所有行业都面临颠覆
+            a 阅读全部 
+              i.fa.fa-arrow-circle-right
+      .row.voffset
+        - for (var i = 0; i < 4; i++) {
+        - var cls = i==3 ? 'visible-lg' : '';
+          .col-lg-3.col-md-4.col-sm-4.col-xs-12(class="#{cls}")
+            .case
+              img(src="http://placehold.it/263x263")
+              .layer
+                h5 文章标题
+                  a 详情 
+                    i.fa.fa-arrow-circle-right
+                hr
+                p 文章缩略，最好是控制在两行，这样即能表达内容，也不影响美观
+        - }
+  #join.content
+    .container
+      .row.first
+        .col-md-7.col-md-offset-1.col-sm-6.col-xs-12
+          h1 大数据改变生活
+          h2 我们坚信, 我们期待，我们共同创造
+        .col-md-3.col-sm-6.col-xs-12.btns
+          a.btn.btn-lg 业务合作
+          a.btn.btn-lg 活动参与
+  #team.content
+    .container
+      .row.first
+        .col-md-12.col-sm-12.col-xs-12
+          h1 我们的战队
+      .row.voffset
+        each member in members
+          .col-md-3.col-sm-3.col-xs-12
+            .member
+              img(src="/images/members/#{member.alias}.jpg")
+              .introduction
+                h5 #{member.name}
+                p #{member.about}
+  footer#footer.content
+    .container
+      .row
+        .col-md-3.col-sm-3.col-xs-12 
+          h1 大数据战队
+          ul.nav
+            li
+              a 加入我们
+            li
+              a 寻求报道
+            li
+              a 业务咨询
+            li
+              a 商务拓展
+        .col-md-3.col-sm-3.col-xs-12
+          h1 合作伙伴
+        .col-md-3.col-sm-3.col-xs-12
+          h1 联系方式
+        .col-md-3.col-sm-3.col-xs-12
+          h1 法律声明      
   != js("main")
