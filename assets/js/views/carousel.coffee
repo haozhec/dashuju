@@ -2,6 +2,7 @@ class Carousel extends Backbone.View
   el: "#top-slider"
   events: 
     "click .carousel-indicators li": "onSlide"
+    'swipe': 'onSwipe'
   initialize: ->
     @carousel = @$ ".carousel"
     @slides = @carousel.find "figure"
@@ -22,6 +23,12 @@ class Carousel extends Backbone.View
         "-webkit-transform": "rotateY( "+-index*360/@slides.length+"deg )"
       if /msie/.test navigator.userAgent.toLowerCase()
         $(@slides.hide()[index]).show();
+  onSwipe: (e)->
+    index = @controller.find("li.active").index()
+    if e.direction is 'right'
+      @controller.find("li").eq((index+1) % 3).trigger "click"
+    if e.direction is 'left'
+      @controller.find("li").eq((index+2) % 3).trigger "click"
       
 
 window.carousel = new Carousel()
