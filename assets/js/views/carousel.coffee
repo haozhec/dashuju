@@ -13,6 +13,7 @@ class Carousel extends Backbone.View
     _.each @slides, (slide, index)->
       $(slide).css 
         "-webkit-transform": "rotateY( " + index*360/len + "deg ) translateZ( "+Math.ceil(Math.tan(180/len)*1000)+"px )"
+        "-moz-transform": "rotateY( " + index*360/len + "deg ) translateZ( "+Math.ceil(Math.tan(180/len)*1000)+"px )"
     @controller.find("li:eq(0)").addClass "active"
   onSlide: (e)->
     index = $(e.currentTarget).index()
@@ -21,6 +22,7 @@ class Carousel extends Backbone.View
       @controller.find("li").eq(index).addClass "active"
       @carousel.css 
         "-webkit-transform": "rotateY( "+-index*360/@slides.length+"deg )"
+        "-moz-transform": "rotateY( "+-index*360/@slides.length+"deg )"
       if /msie/.test navigator.userAgent.toLowerCase()
         $(@slides.hide()[index]).show();
   onSwipe: (e)->
